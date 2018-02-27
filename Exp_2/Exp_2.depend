@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1448435131 source:e:\c++\exp&lecture\exp\exp_2\main.cpp
+	<iostream>
+	<stdlib.h>
+

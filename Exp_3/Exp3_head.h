@@ -1,0 +1,67 @@
+#ifndef EXP3_HEAD_H_INCLUDED
+#define EXP3_HEAD_H_INCLUDED
+
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#define STACKSIZE 10
+
+using namespace std;
+
+class STACK{
+    int  *const elems;	//申请内存用于存放栈的元素
+    const int   max;	//栈能存放的最大元素个数
+    int   pos;			//栈实际已有元素个数，栈空时pos=0;
+public:
+STACK(int m=STACKSIZE);         //初始化栈：最多m个元素
+
+STACK(const STACK&s) ;          //用栈s拷贝初始化栈
+
+virtual int  size ( ) const{ return max; }		//返回栈的最大元素个数max
+
+virtual operator int ( ) const{ return pos; }	//返回栈的实际元素个数pos
+
+virtual int operator[ ] (int x) const{ return elems[x];}        //取下标x处的栈元素
+
+virtual STACK& operator<<(int e);  	//将e入栈,并返回栈
+
+virtual STACK& operator>>(int &e); 	//出栈到e,并返回栈
+
+virtual STACK& operator=(const STACK&s); //赋s给栈,并返回被赋值的栈
+
+virtual void print( ) const{
+     if(max==0){
+        cout << "Stack doesn't exist!" << endl;
+        return;
+    }
+    int k;
+    cout<<"bottom";
+    for(k=0; k<pos; k++)
+    {
+
+        cout<<"\t";
+        cout << elems[k]<< " ";
+
+    }
+    cout<<"top";
+
+
+}
+
+virtual ~STACK( ){
+
+    delete []elems;
+    *(int *)&max = 0;
+    int *p=(int *)(&max);
+    *p=0;
+    pos=0;
+}
+			//销毁栈
+};
+#endif // EXP3_HEAD_H_INCLUDED
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1450859506 source:e:\c++\exp&lecture\exp\exp_6\main.cpp
+	"E:\c++\Exp&lecture\exp\Exp_6\Exp6_head.h"
+
+1450857500 e:\c++\exp&lecture\exp\exp_6\exp6_head.h
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+
